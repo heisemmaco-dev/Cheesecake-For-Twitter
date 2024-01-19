@@ -1,0 +1,315 @@
+@use "typography" as *;
+@forward "reset";
+@use "color" as *;
+@use "pexilConverter" as *;
+@use "mixin" as *;
+
+body {
+  background-color: $background-color;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+  width: min(100% - rem(10), em(1346));
+  margin: 0 auto;
+  position: relative;
+
+  img {
+    width: rem(120);
+    height: auto;
+  }
+
+  nav {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    width: min(100%, rem(316));
+    height: rem(500);
+
+    border-radius: rem(10);
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background-color: $text-focus-font-color;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+
+      font-weight: 700;
+      font-family: "Inter", sans-serif;
+
+      li {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          color: $white;
+          width: 100%;
+          height: 100%;
+          line-height: rem(115);
+          text-align: center;
+          border-radius: rem(10);
+          transition: background-color 0.15s ease;
+          user-select: none;
+
+          &:is(:hover, :focus) {
+            background-color: $white;
+            color: $text-focus-font-color;
+          }
+        }
+      }
+    }
+
+    &.showMenu {
+      display: flex;
+    }
+  }
+
+  .button_container {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-up {
+    padding: rem(8) rem(10);
+    width: min(100%, rem(104));
+
+    height: 49px;
+
+    background-color: transparent;
+
+    border: rem(2) solid $sign-up;
+    border-radius: rem(38);
+    color: $sign-up;
+    font-weight: 500;
+    font-size: clamp(10px, 5vw, 16px);
+    font-family: $poppins-font-family;
+  }
+
+  .menue_btn {
+    z-index: 2;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    transition: all 0.15s ease;
+    i {
+      font-size: rem(50);
+    }
+
+    i:last-child {
+      display: none;
+    }
+
+    &.toggleImage {
+      i:last-child {
+        display: initial;
+      }
+
+      i:first-child {
+        display: none;
+      }
+    }
+  }
+
+  @include media($desktop-width) {
+    img {
+      width: rem(165);
+    }
+    .button_container {
+      width: rem(130);
+    }
+    .sign-up {
+      padding: rem(12) rem(19);
+    }
+
+    .menue_btn {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      height: rem(43);
+      width: min(100%, rem(446));
+      position: relative;
+      background-color: rgba(111, 68, 54, 0.8);
+
+      ul {
+        flex-direction: row;
+
+        li {
+          a {
+            line-height: rem(43);
+          }
+        }
+      }
+    }
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-out {
+  animation: slideOut 1s ease-in-out;
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -20000px;
+  }
+}
+
+main .home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: rem(38);
+  width: min(100% - rem(40), em(1346));
+  margin: 0 auto;
+
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(28);
+
+    h1 {
+      color: $sign-up;
+      font-family: $inika-font-family;
+      font-size: clamp(rem(25), 5vw, rem(69));
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      text-wrap: balance;
+    }
+
+    p {
+      font-family: $inter-font-family;
+      font-size: clamp(rem(16), 5vw, rem(18));
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+
+      width: min(100%, rem(427));
+    }
+
+    .con_btn {
+      width: min(100%, rem(338));
+      display: flex;
+      gap: rem(12);
+      margin-top: rem(10);
+
+      button {
+        width: 100%;
+        border-radius: rem(100);
+        padding: rem(19) rem(30);
+
+        &:first-child {
+          background-color: $sign-up;
+          color: $white;
+          width: 90%;
+          border: none;
+          outline: none;
+
+          font-family: $poppins-font-family;
+          font-size: rem(15);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%;
+
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+            0px 5px 11px 0px rgba(0, 0, 0, 0.1),
+            0px 20px 20px 0px rgba(0, 0, 0, 0.09),
+            0px 45px 27px 0px rgba(0, 0, 0, 0.05),
+            0px 81px 32px 0px rgba(0, 0, 0, 0.01),
+            0px 126px 35px 0px rgba(0, 0, 0, 0);
+        }
+
+        &:last-child {
+          display: flex;
+          gap: rem(5);
+          align-items: center;
+          padding: rem(19) rem(18);
+
+          p {
+            color: $sign-up;
+            font-family: $poppins-font-family;
+            font-size: rem(15);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+          }
+
+          background-color: transparent;
+
+          border: 1px solid #3d2619;
+        }
+      }
+    }
+  }
+
+  .img_container {
+    width: 90%;
+    gap: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @include media($desktop-width) {
+    flex-direction: row;
+  }
+}
+
+main .about-us-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: rem(38);
+  width: min(100% - rem(40), em(1346));
+  margin: 0 auto;
+
+  article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+  }
+
+  @include media($desktop-width) {
+    flex-direction: row;
+  }
+}

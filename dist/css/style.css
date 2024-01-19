@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fff8e1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+  width: min(100% - 0.625rem, 84.125em);
+  margin: 0 auto;
+  position: relative;
+}
+header img {
+  width: 7.5rem;
+  height: auto;
+}
+header nav {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100%, 19.75rem);
+  height: 31.25rem;
+  border-radius: 0.625rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgb(111, 68, 54);
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+header nav ul li {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav ul li a {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  line-height: 7.1875rem;
+  text-align: center;
+  border-radius: 0.625rem;
+  transition: background-color 0.15s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+header nav ul li a:is(:hover, :focus) {
+  background-color: #fff;
+  color: rgb(111, 68, 54);
+}
+header nav.showMenu {
+  display: flex;
+}
+header .button_container {
+  display: flex;
+  align-items: center;
+}
+header .sign-up {
+  padding: 0.5rem 0.625rem;
+  width: min(100%, 6.5rem);
+  height: 49px;
+  background-color: transparent;
+  border: 0.125rem solid #523728;
+  border-radius: 2.375rem;
+  color: #523728;
+  font-weight: 500;
+  font-size: clamp(10px, 5vw, 16px);
+  font-family: "Poppins", sans-serif;
+}
+header .menue_btn {
+  z-index: 2;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.15s ease;
+}
+header .menue_btn i {
+  font-size: 3.125rem;
+}
+header .menue_btn i:last-child {
+  display: none;
+}
+header .menue_btn.toggleImage i:last-child {
+  display: initial;
+}
+header .menue_btn.toggleImage i:first-child {
+  display: none;
+}
+@media screen and (min-width: 676px) {
+  header img {
+    width: 10.3125rem;
+  }
+  header .button_container {
+    width: 8.125rem;
+  }
+  header .sign-up {
+    padding: 0.75rem 1.1875rem;
+  }
+  header .menue_btn {
+    display: none;
+  }
+  header nav {
+    display: flex;
+    height: 2.6875rem;
+    width: min(100%, 27.875rem);
+    position: relative;
+    background-color: rgba(111, 68, 54, 0.8);
+  }
+  header nav ul {
+    flex-direction: row;
+  }
+  header nav ul li a {
+    line-height: 2.6875rem;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.slide-out {
+  animation: slideOut 1s ease-in-out;
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -20000px;
+  }
+}
+main .home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 2.375rem;
+  width: min(100% - 2.5rem, 84.125em);
+  margin: 0 auto;
+}
+main .home-section article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+main .home-section article h1 {
+  color: #523728;
+  font-family: "Inika", sans-serif;
+  font-size: clamp(1.5625rem, 5vw, 4.3125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-wrap: balance;
+}
+main .home-section article p {
+  font-family: "inter", sans-serif;
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  width: min(100%, 26.6875rem);
+}
+main .home-section article .con_btn {
+  width: min(100%, 21.125rem);
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.625rem;
+}
+main .home-section article .con_btn button {
+  width: 100%;
+  border-radius: 6.25rem;
+  padding: 1.1875rem 1.875rem;
+}
+main .home-section article .con_btn button:first-child {
+  background-color: #523728;
+  color: #fff;
+  width: 90%;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 5px 11px 0px rgba(0, 0, 0, 0.1), 0px 20px 20px 0px rgba(0, 0, 0, 0.09), 0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01), 0px 126px 35px 0px rgba(0, 0, 0, 0);
+}
+main .home-section article .con_btn button:last-child {
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  padding: 1.1875rem 1.125rem;
+  background-color: transparent;
+  border: 1px solid #3d2619;
+}
+main .home-section article .con_btn button:last-child p {
+  color: #523728;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+main .home-section .img_container {
+  width: 90%;
+  gap: 0;
+}
+main .home-section .img_container img {
+  width: 100%;
+}
+@media screen and (min-width: 676px) {
+  main .home-section {
+    flex-direction: row;
+  }
+}
+
+main .about-us-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 2.375rem;
+  width: min(100% - 2.5rem, 84.125em);
+  margin: 0 auto;
+}
+main .about-us-section article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+}
+@media screen and (min-width: 676px) {
+  main .about-us-section {
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=style.css.map */
