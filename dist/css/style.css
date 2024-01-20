@@ -236,6 +236,12 @@ header .menue_btn.toggleImage i:first-child {
     right: -20000px;
   }
 }
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 12.4375rem;
+}
+
 main .home-section {
   display: flex;
   justify-content: space-between;
@@ -273,6 +279,7 @@ main .home-section article .con_btn {
   display: flex;
   gap: 0.75rem;
   margin-top: 0.625rem;
+  flex-wrap: wrap;
 }
 main .home-section article .con_btn button {
   width: 100%;
@@ -325,19 +332,276 @@ main .about-us-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 2.375rem;
   width: min(100% - 2.5rem, 84.125em);
   margin: 0 auto;
+  overflow: hidden;
+}
+main .about-us-section .img_cont {
+  flex: 1;
+  height: 31.25rem;
+}
+main .about-us-section .img_cont img {
+  height: 40rem;
+  width: 100%;
+  position: relative;
+  top: -177px;
 }
 main .about-us-section article {
-  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1.5625rem;
+}
+main .about-us-section article h1 {
+  color: #220404;
+  font-family: "Inika", sans-serif;
+  font-size: clamp(1.875rem, 5vw, 3.75rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main .about-us-section article div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+main .about-us-section article div:first-child p {
+  color: #220404;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.125rem, 5vw, 1.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main .about-us-section article div:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+main .about-us-section article div:not(:first-child) p {
+  color: #220404;
+  font-family: "inter", sans-serif;
+  font-size: clamp(1.0625rem, 5vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-wrap: balance;
+  text-align: start;
+}
+main .about-us-section article .readMore {
+  width: min(100%, 9.375rem);
+  background: #6a4028;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 5px 11px 0px rgba(0, 0, 0, 0.1), 0px 20px 20px 0px rgba(0, 0, 0, 0.09), 0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01), 0px 126px 35px 0px rgba(0, 0, 0, 0);
+  display: inline-flex;
+  height: 3.5rem;
+  border-radius: 6.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  border: none;
+  outline: none;
 }
 @media screen and (min-width: 676px) {
   main .about-us-section {
     flex-direction: row;
   }
+}
+
+main .menu-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.125rem;
+  width: min(100% - 2.5rem, 84.125em);
+  margin: 0 auto;
+}
+main .menu-section h1 {
+  color: #745545;
+  font-family: "Inika", sans-serif;
+  font-size: clamp(1.875rem, 5vw, 4rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main .menu-section article {
+  display: flex;
+  gap: 4.1875rem;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 676px) {
+  main .menu-section article {
+    justify-content: center;
+  }
+}
+main .menu-section article .menu_container {
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 22.1875rem);
+  padding: 1.3125rem;
+  border-radius: 41px;
+  background: #fff8e1;
+  box-shadow: 2px 9px 42px 0px rgba(77, 66, 44, 0.21), -2px -9px 42px 0px rgba(77, 66, 44, 0.21);
+}
+main .menu-section article .menu_container .cheesecake_img {
+  padding-top: 2.1875rem;
+  padding-bottom: 1.375rem;
+}
+main .menu-section article .menu_container .text {
+  display: flex;
+  gap: 0.125rem;
+  flex-direction: column;
+  text-align: start;
+  width: 100%;
+}
+main .menu-section article .menu_container .text strong {
+  color: #1d2729;
+  font-family: "Inika", sans-serif;
+  font-size: clamp(1.125rem, 5vw, 1.5625rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+main .menu-section article .menu_container .text small {
+  color: #555;
+  font-family: "Recursive", sans-serif;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main .menu-section article .menu_container .price_and_star {
+  display: flex;
+  gap: 0.125rem;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+main .menu-section article .menu_container .price_and_star strong {
+  color: #745545;
+  font-family: "inter", sans-serif;
+  font-size: clamp(1.1875rem, 5vw, 1.3125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+main .menu-section article .menu_container .price_and_star strong span {
+  color: #53a623;
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+main .menu-section article .menu_container .price_and_star .star {
+  display: flex;
+  gap: 0.3125rem;
+}
+main .menu-section article .menu_container .price_and_star .star img {
+  width: 1rem;
+  height: 0.9375rem;
+  flex-shrink: 0;
+}
+
+main .our-blog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4.75rem;
+  align-items: center;
+  width: min(100% - 2.5rem, 84.125em);
+  margin: 0 auto;
+}
+main .our-blog-section .header_text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  text-align: center;
+  color: #734b33;
+}
+main .our-blog-section .header_text h1 {
+  font-family: "Inika", sans-serif;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+main .our-blog-section .header_text p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+main .our-blog-section .ariticles_container {
+  display: flex;
+  gap: clamp(2.5rem, 5vw, 6.6875rem);
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 676px) {
+  main .our-blog-section .ariticles_container {
+    flex-direction: row;
+    align-items: normal;
+  }
+}
+main .our-blog-section .ariticles_container article {
+  width: min(100%, 20rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 2.125rem;
+  justify-content: space-around;
+  border-radius: 1.1875rem;
+  background: #fff8e1;
+  box-shadow: -2px -9px 42px 0px rgba(77, 66, 44, 0.38);
+}
+main .our-blog-section .ariticles_container article .date {
+  color: #bb6939;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(0.9375rem, 5vw, 1.125rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+main .our-blog-section .ariticles_container article strong {
+  color: #734b33;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.125rem, 5vw, 1.375rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+main .our-blog-section .ariticles_container article div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: #704b33;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(0.5625rem, 5vw, 0.78125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+}
+main .our-blog-section .ariticles_container article div a {
+  color: #734b33;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(0.75rem, 5vw, 0.96875rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }/*# sourceMappingURL=style.css.map */
