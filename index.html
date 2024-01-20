@@ -25,10 +25,10 @@
 
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#aboutUs">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#Contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -92,7 +92,7 @@
         </article>
       </section>
 
-      <section class="menu-section">
+      <section class="menu-section" id="menu">
         <h1>Our Menu</h1>
         <article>
           <!-- first menu -->
@@ -235,6 +235,67 @@
         </div>
       </section>
     </main>
+
+    <!-- Contact us section -->
+
+    <footer id="Contact">
+      <article>
+        <div class="heading_and_text">
+          <h1>Contact Us</h1>
+          <p>
+            Need to get in touch with us? Either fill out the form with your
+            inquiry or find the department!
+          </p>
+        </div>
+
+        <div>
+          <img src="./assets/contact us image.png" alt="contact image" />
+        </div>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="Copyright">
+          Copyright &copy; 2024 Dscode | All rights reserved
+        </p>
+      </article>
+
+      <form autocomplete="on">
+        <div>
+          <input type="text" placeholder="Name" />
+          <small></small>
+        </div>
+        <div>
+          <input type="text" placeholder="Email" />
+          <small></small>
+        </div>
+        <div>
+          <textarea
+            id="massage"
+            cols="30"
+            rows="10"
+            placeholder="Your Message..."
+          ></textarea>
+          <small></small>
+        </div>
+
+        <button>Contact us now</button>
+      </form>
+    </footer>
 
     <script src="main.js"></script>
   </body>

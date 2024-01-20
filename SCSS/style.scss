@@ -4,8 +4,16 @@
 @use "pexilConverter" as *;
 @use "mixin" as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  gap: rem(199);
+  position: relative;
 }
 
 header {
@@ -15,7 +23,12 @@ header {
   gap: 3%;
   width: min(100% - rem(10), em(1346));
   margin: 0 auto;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(5px);
+  z-index: 1;
 
   img {
     width: rem(120);
@@ -35,6 +48,7 @@ header {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 2;
 
     background-color: $text-focus-font-color;
 
@@ -193,6 +207,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: rem(199);
+  margin-top: rem(120);
+
+  @include media($desktop-width) {
+    margin-top: rem(250);
+  }
 }
 
 main .home-section {
@@ -203,12 +222,21 @@ main .home-section {
   gap: rem(38);
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
+  scroll-margin-top: rem(150);
 
   article {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: rem(28);
+    align-items: center;
+    text-align: center;
+    text-wrap: balance;
+
+    @include media($desktop-width) {
+      align-items: start;
+      text-align: start;
+    }
 
     h1 {
       color: $sign-up;
@@ -235,7 +263,12 @@ main .home-section {
       display: flex;
       gap: rem(12);
       margin-top: rem(10);
-      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+
+      @include media($desktop-width) {
+        flex-direction: row;
+      }
 
       button {
         width: 100%;
@@ -245,7 +278,7 @@ main .home-section {
         &:first-child {
           background-color: $sign-up;
           color: $white;
-          width: 90%;
+          width: 100%;
           border: none;
           outline: none;
 
@@ -261,6 +294,10 @@ main .home-section {
             0px 45px 27px 0px rgba(0, 0, 0, 0.05),
             0px 81px 32px 0px rgba(0, 0, 0, 0.01),
             0px 126px 35px 0px rgba(0, 0, 0, 0);
+
+          @include media($desktop-width) {
+            width: 90%;
+          }
         }
 
         &:last-child {
@@ -301,6 +338,7 @@ main .home-section {
 }
 
 main .about-us-section {
+  scroll-margin-top: rem(150);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -308,17 +346,13 @@ main .about-us-section {
   gap: rem(38);
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
-  overflow: hidden;
 
   .img_cont {
     flex: 1;
-    height: rem(500);
 
     img {
-      height: rem(640);
       width: 100%;
       position: relative;
-      top: -177px;
     }
   }
 
@@ -327,6 +361,11 @@ main .about-us-section {
     display: flex;
     flex-direction: column;
     gap: rem(25);
+    height: auto;
+
+    @include media(em(1100)) {
+      height: 38%;
+    }
 
     h1 {
       color: $about-us-h1;
@@ -413,6 +452,7 @@ main .menu-section {
   gap: rem(34);
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
+  scroll-margin-top: rem(170);
 
   h1 {
     color: $price-color;
@@ -557,7 +597,7 @@ main .our-blog-section {
   .ariticles_container {
     display: flex;
     gap: clamp(rem(40), 5vw, rem(107)); //rem(107)
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -619,5 +659,186 @@ main .our-blog-section {
         }
       }
     }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //flex-direction: row;
+  gap: clamp(rem(100), 10vw, rem(233));
+  width: min(100% - rem(40), em(1346));
+  margin: 0 auto;
+  flex-direction: column;
+
+  @include media($desktop-width) {
+    flex-direction: row;
+  }
+
+  article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(34);
+    width: 100%;
+    text-align: center;
+    text-wrap: balance;
+
+    @include media($desktop-width) {
+      text-align: start;
+      text-align: start;
+    }
+
+    .heading_and_text {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+
+      h1 {
+        color: #734b33;
+        font-family: $inika-font-family;
+        font-size: clamp(rem(30), 5vw, rem(64));
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      p {
+        color: #734b33;
+        font-family: $Roboto;
+        font-size: clamp(rem(15), 5vw, rem(20));
+        font-style: normal;
+        font-weight: 400;
+        line-height: rem(32);
+      }
+    }
+    nav {
+      width: 100%;
+
+      ul {
+        display: flex;
+        // flex-wrap: wrap;
+        gap: rem(10);
+        width: 100%;
+        list-style: none;
+        // flex-direction: column;
+        justify-content: center;
+
+        @include media($desktop-width) {
+          justify-content: start;
+        }
+
+        li {
+          // width: 100%;
+          display: flex;
+          align-items: center;
+
+          border-radius: 50%;
+
+          width: 43px;
+          height: 43px;
+          flex-shrink: 0;
+
+          a {
+            background-color: #edffef;
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            line-height: 43px;
+            text-align: center;
+
+            color: #484848;
+
+            transition: all 0.2s ease;
+
+            &:is(:hover, :focus) {
+              color: $white;
+              background-color: $icon-hover-bg-color;
+            }
+          }
+        }
+      }
+    }
+
+    .Copyright {
+      color: #734b33;
+      font-family: $inter-font-family;
+      font-size: clamp(rem(14), 5vw, rem(20));
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+}
+
+footer form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(34);
+  margin-bottom: rem(20);
+
+  div {
+    width: 100%;
+
+    input {
+      width: 100%;
+      border-radius: 60px;
+      background: #fff;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.26);
+      padding: rem(26);
+      outline: none;
+      border: none;
+
+      font-family: $inter-font-family;
+      font-size: rem(20);
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: rem(26);
+      background: #fff;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.26);
+      padding: rem(26);
+      outline: none;
+      border: none;
+
+      font-family: $inter-font-family;
+      font-size: rem(20);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: $place-holder-color;
+      text-align: start;
+      font-family: $inter-font-family;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  button {
+    width: 100%;
+    border-radius: 60px;
+    background: #ffc468;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    color: #000;
+    text-align: center;
+    font-family: $inter-font-family;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    padding: rem(26);
+    outline: none;
+    border: none;
   }
 }
