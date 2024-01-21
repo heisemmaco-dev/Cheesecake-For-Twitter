@@ -82,6 +82,10 @@ ul {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -254,12 +258,11 @@ header .menue_btn.toggleImage i:first-child {
 main {
   display: flex;
   flex-direction: column;
-  gap: 12.4375rem;
-  margin-top: 7.5rem;
+  margin-top: 5.625rem;
 }
 @media screen and (min-width: 676px) {
   main {
-    margin-top: 15.625rem;
+    margin-top: 3.125rem;
   }
 }
 
@@ -272,6 +275,7 @@ main .home-section {
   width: min(100% - 2.5rem, 84.125em);
   margin: 0 auto;
   scroll-margin-top: 9.375rem;
+  margin-top: 5.625rem;
 }
 main .home-section article {
   width: 100%;
@@ -371,7 +375,7 @@ main .home-section .img_container img {
 }
 
 main .about-us-section {
-  scroll-margin-top: 9.375rem;
+  scroll-margin-top: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -468,6 +472,7 @@ main .menu-section {
   width: min(100% - 2.5rem, 84.125em);
   margin: 0 auto;
   scroll-margin-top: 10.625rem;
+  margin-top: clamp(5rem, 10vw, 7.5rem);
 }
 main .menu-section h1 {
   color: #745545;
@@ -568,6 +573,7 @@ main .our-blog-section {
   align-items: center;
   width: min(100% - 2.5rem, 84.125em);
   margin: 0 auto;
+  margin-top: clamp(5rem, 10vw, 7.5rem);
 }
 main .our-blog-section .header_text {
   display: flex;
@@ -660,6 +666,8 @@ footer {
   width: min(100% - 2.5rem, 84.125em);
   margin: 0 auto;
   flex-direction: column;
+  scroll-margin-top: 12.5rem;
+  margin-top: clamp(5rem, 10vw, 7.5rem);
 }
 @media screen and (min-width: 676px) {
   footer {
@@ -817,4 +825,16 @@ footer form button {
   padding: 1.625rem;
   outline: none;
   border: none;
+}
+
+.when {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.when.active {
+  transform: translateY(0px);
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

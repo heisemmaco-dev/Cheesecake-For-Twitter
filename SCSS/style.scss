@@ -206,11 +206,11 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  gap: rem(199);
-  margin-top: rem(120);
+  // gap: clamp(rem(50), 10vw, rem(150));
+  margin-top: rem(90);
 
   @include media($desktop-width) {
-    margin-top: rem(250);
+    margin-top: rem(50);
   }
 }
 
@@ -223,6 +223,7 @@ main .home-section {
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
   scroll-margin-top: rem(150);
+  margin-top: rem(90);
 
   article {
     width: 100%;
@@ -338,7 +339,7 @@ main .home-section {
 }
 
 main .about-us-section {
-  scroll-margin-top: rem(150);
+  scroll-margin-top: rem(80);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -453,6 +454,7 @@ main .menu-section {
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
   scroll-margin-top: rem(170);
+  margin-top: clamp(rem(80), 10vw, rem(120));
 
   h1 {
     color: $price-color;
@@ -490,7 +492,6 @@ main .menu-section {
       .cheesecake_img {
         padding-top: rem(35);
         padding-bottom: rem(22);
-        // padding: rem(35) rem(96) rem(22) rem(96);
       }
 
       .text {
@@ -569,6 +570,7 @@ main .our-blog-section {
 
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
+  margin-top: clamp(rem(80), 10vw, rem(120));
 
   .header_text {
     display: flex;
@@ -671,6 +673,8 @@ footer {
   width: min(100% - rem(40), em(1346));
   margin: 0 auto;
   flex-direction: column;
+  scroll-margin-top: rem(200);
+  margin-top: clamp(rem(80), 10vw, rem(120));
 
   @include media($desktop-width) {
     flex-direction: row;
@@ -841,4 +845,16 @@ footer form {
     outline: none;
     border: none;
   }
+}
+
+.when {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.when.active {
+  transform: translateY(0px);
+  opacity: 1;
 }

@@ -44,7 +44,7 @@
 
     <main>
       <section id="home" class="home-section">
-        <article>
+        <article class="when">
           <h1>Bite The World of Cheesecake Wonders</h1>
           <p>
             We always make our customer happy by providing as many choices as
@@ -59,17 +59,17 @@
           </div>
         </article>
 
-        <div class="img_container">
+        <div class="img_container when">
           <img src="./assets/Main Image (Home).png" alt="Cheesecake" />
         </div>
       </section>
 
       <section id="aboutUs" class="about-us-section">
-        <div class="img_cont">
+        <div class="img_cont when">
           <img src="./assets/about.png" alt="Cheesecake" />
         </div>
 
-        <article>
+        <article class="when">
           <div>
             <h1>We Love Cheesecake</h1>
             <p>Discover Our Cheesecake Story</p>
@@ -92,11 +92,11 @@
         </article>
       </section>
 
-      <section class="menu-section" id="menu">
+      <section class="menu-section when" id="menu">
         <h1>Our Menu</h1>
         <article>
           <!-- first menu -->
-          <div class="menu_container">
+          <div class="menu_container when">
             <img
               src="./assets/Blueberry Cheesecake Image.png"
               alt="Biscuff Cheesecake"
@@ -121,7 +121,7 @@
           </div>
 
           <!-- second menu -->
-          <div class="menu_container">
+          <div class="menu_container when">
             <img
               src="./assets/Biscuff Cheesecake.png"
               alt="Biscuff Cheesecake"
@@ -146,7 +146,7 @@
           </div>
 
           <!-- third menu -->
-          <div class="menu_container">
+          <div class="menu_container when">
             <img
               src="./assets/Chocolate Cheesecake.png"
               alt="Biscuff Cheesecake"
@@ -173,13 +173,13 @@
       </section>
 
       <section class="our-blog-section">
-        <div class="header_text">
+        <div class="header_text when">
           <h1>Our Blog</h1>
           <p>Our Recent Posts</p>
         </div>
 
-        <div class="ariticles_container">
-          <article class="img_and_article">
+        <div class="ariticles_container when">
+          <article class="img_and_article when">
             <img src="./assets/IMAGE FOR BLOG 1.png" alt="img width a cheif" />
 
             <p class="date">23 Nov, 2023 / Cheesecake</p>
@@ -197,7 +197,7 @@
             </div>
           </article>
 
-          <article class="img_and_article">
+          <article class="img_and_article when">
             <img src="./assets/Image Blog 2.png" alt="img width a cheif" />
 
             <p class="date">18 July, 2023 / Cheesecake</p>
@@ -215,7 +215,7 @@
             </div>
           </article>
 
-          <article class="img_and_article">
+          <article class="img_and_article when">
             <img src="./assets/Image Blog 3.png" alt="img width a cheif" />
 
             <p class="date">1 January, 2024 / Cheesecake</p>
@@ -277,11 +277,11 @@
       <form autocomplete="on">
         <div>
           <input type="text" placeholder="Name" />
-          <small></small>
+          <small class="nameError"></small>
         </div>
         <div>
-          <input type="text" placeholder="Email" />
-          <small></small>
+          <input type="text" placeholder="Email" class="Email" />
+          <small class="emailError"></small>
         </div>
         <div>
           <textarea
@@ -290,10 +290,10 @@
             rows="10"
             placeholder="Your Message..."
           ></textarea>
-          <small></small>
+          <small class="textareaError"></small>
         </div>
 
-        <button>Contact us now</button>
+        <button type="submit">Contact us now</button>
       </form>
     </footer>
 
