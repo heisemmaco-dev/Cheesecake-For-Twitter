@@ -471,7 +471,7 @@ main .menu-section {
   gap: 2.125rem;
   width: min(100% - 2.5rem, 84.125em);
   margin: 0 auto;
-  scroll-margin-top: 10.625rem;
+  scroll-margin-top: 20rem;
   margin-top: clamp(5rem, 10vw, 7.5rem);
 }
 main .menu-section h1 {
