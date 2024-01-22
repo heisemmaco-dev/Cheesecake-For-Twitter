@@ -47,8 +47,8 @@ header {
 
     position: absolute;
     right: 0;
-    top: 0;
-    z-index: 2;
+    top: 2px;
+    z-index: 4;
 
     background-color: $text-focus-font-color;
 
@@ -114,6 +114,13 @@ header {
     font-weight: 500;
     font-size: clamp(10px, 5vw, 16px);
     font-family: $poppins-font-family;
+
+    transition: all 0.16s ease;
+
+    &:is(:hover, :focus) {
+      border: rem(2) solid #b34003;
+      color: #b34003;
+    }
   }
 
   .menue_btn {
@@ -296,6 +303,13 @@ main .home-section {
             0px 81px 32px 0px rgba(0, 0, 0, 0.01),
             0px 126px 35px 0px rgba(0, 0, 0, 0);
 
+          transition: all 0.16s ease;
+
+          &:is(:hover, :focus) {
+            background-color: $white;
+            color: $sign-up;
+          }
+
           @include media($desktop-width) {
             width: 90%;
           }
@@ -319,6 +333,16 @@ main .home-section {
           background-color: transparent;
 
           border: 1px solid #3d2619;
+
+          transition: all 0.16s ease;
+
+          &:is(:hover, :focus) {
+            border: rem(1) solid #b34003;
+
+            p {
+              color: #b34003;
+            }
+          }
         }
       }
     }
@@ -437,6 +461,13 @@ main .about-us-section {
 
       border: none;
       outline: none;
+
+      transition: all 0.16s ease;
+
+      &:is(:hover, :focus) {
+        background: $white;
+        color: $get-started;
+      }
     }
   }
 
@@ -692,7 +723,7 @@ footer {
 
     @include media($desktop-width) {
       text-align: start;
-      text-align: start;
+      align-items: start;
     }
 
     .heading_and_text {
@@ -844,6 +875,13 @@ footer form {
     padding: rem(26);
     outline: none;
     border: none;
+
+    transition: all 0.16s ease;
+
+    &:is(:hover, :focus) {
+      background: #000;
+      color: #ffc468;
+    }
   }
 }
 

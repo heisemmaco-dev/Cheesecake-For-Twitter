@@ -84,6 +84,9 @@ ul {
 
 button {
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -126,8 +129,8 @@ header nav {
   border-radius: 0.625rem;
   position: absolute;
   right: 0;
-  top: 0;
-  z-index: 2;
+  top: 2px;
+  z-index: 4;
   background-color: rgb(111, 68, 54);
 }
 header nav ul {
@@ -183,6 +186,11 @@ header .sign-up {
   font-weight: 500;
   font-size: clamp(10px, 5vw, 16px);
   font-family: "Poppins", sans-serif;
+  transition: all 0.16s ease;
+}
+header .sign-up:is(:hover, :focus) {
+  border: 0.125rem solid #b34003;
+  color: #b34003;
 }
 header .menue_btn {
   z-index: 2;
@@ -339,6 +347,11 @@ main .home-section article .con_btn button:first-child {
   font-weight: 600;
   line-height: 120%;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 5px 11px 0px rgba(0, 0, 0, 0.1), 0px 20px 20px 0px rgba(0, 0, 0, 0.09), 0px 45px 27px 0px rgba(0, 0, 0, 0.05), 0px 81px 32px 0px rgba(0, 0, 0, 0.01), 0px 126px 35px 0px rgba(0, 0, 0, 0);
+  transition: all 0.16s ease;
+}
+main .home-section article .con_btn button:first-child:is(:hover, :focus) {
+  background-color: #fff;
+  color: #523728;
 }
 @media screen and (min-width: 676px) {
   main .home-section article .con_btn button:first-child {
@@ -352,6 +365,7 @@ main .home-section article .con_btn button:last-child {
   padding: 1.1875rem 1.125rem;
   background-color: transparent;
   border: 1px solid #3d2619;
+  transition: all 0.16s ease;
 }
 main .home-section article .con_btn button:last-child p {
   color: #523728;
@@ -360,6 +374,12 @@ main .home-section article .con_btn button:last-child p {
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+}
+main .home-section article .con_btn button:last-child:is(:hover, :focus) {
+  border: 0.0625rem solid #b34003;
+}
+main .home-section article .con_btn button:last-child:is(:hover, :focus) p {
+  color: #b34003;
 }
 main .home-section .img_container {
   width: 90%;
@@ -456,6 +476,11 @@ main .about-us-section article .readMore {
   line-height: 120%;
   border: none;
   outline: none;
+  transition: all 0.16s ease;
+}
+main .about-us-section article .readMore:is(:hover, :focus) {
+  background: #fff;
+  color: #6a4028;
 }
 @media screen and (min-width: 676px) {
   main .about-us-section {
@@ -687,7 +712,7 @@ footer article {
 @media screen and (min-width: 676px) {
   footer article {
     text-align: start;
-    text-align: start;
+    align-items: start;
   }
 }
 footer article .heading_and_text {
@@ -825,6 +850,11 @@ footer form button {
   padding: 1.625rem;
   outline: none;
   border: none;
+  transition: all 0.16s ease;
+}
+footer form button:is(:hover, :focus) {
+  background: #000;
+  color: #ffc468;
 }
 
 .when {
