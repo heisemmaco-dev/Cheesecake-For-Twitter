@@ -805,6 +805,11 @@ footer form div input {
   font-family: "inter", sans-serif;
   font-size: 1.25rem;
 }
+footer form div small {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-left: 1.375rem;
+}
 footer form div textarea {
   width: 100%;
   border-radius: 1.625rem;
@@ -855,6 +860,10 @@ footer form button {
 footer form button:is(:hover, :focus) {
   background: #000;
   color: #ffc468;
+}
+footer form .congratulationMessage {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
 .when {

@@ -833,6 +833,12 @@ footer form {
       font-size: rem(20);
     }
 
+    small {
+      font-family: $poppins-font-family;
+      font-weight: 500;
+      margin-left: rem(22);
+    }
+
     textarea {
       width: 100%;
       border-radius: rem(26);
@@ -882,6 +888,11 @@ footer form {
       background: #000;
       color: #ffc468;
     }
+  }
+
+  .congratulationMessage {
+    font-family: $poppins-font-family;
+    font-weight: 500;
   }
 }
 
