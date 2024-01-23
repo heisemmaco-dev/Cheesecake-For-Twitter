@@ -130,7 +130,7 @@ header nav {
   position: absolute;
   right: 0;
   top: 2px;
-  z-index: 4;
+  z-index: 1;
   background-color: rgb(111, 68, 54);
 }
 header nav ul {
